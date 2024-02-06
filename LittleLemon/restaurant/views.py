@@ -5,6 +5,9 @@ from .serializers import MenuSerializer, BookingSerializer, UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 
+def index(request):
+    return render(request, 'index.html', {})
+
 class MenuItemView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
